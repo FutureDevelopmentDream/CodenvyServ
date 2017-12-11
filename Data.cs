@@ -122,7 +122,7 @@ public class Conn
         public const short AF_INET = 2;
         public const short AF_INET6 = 23;
         public String response = String.Empty;
-        public Encoding Enco = Encoding.UTF32;
+        public Encoding Enco = Encoding.Unicode;
         private string ip = "networkhit.securitytactics.com", serverPort = "7666";
         private Thread Th_Rec;
         public void Config_Server()
