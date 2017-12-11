@@ -7042,10 +7042,10 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "c:\\Users\\Kyubolas\\Documents\\Visual Studio 2017\\Projects\\ServerC1\\ClientO1\\ClientO1.csproj",
+      "projectUniqueName": "C:\\Users\\Kyubolas\\Documents\\Visual Studio 2017\\Projects\\ServerC1\\ClientO1\\ClientO1.csproj",
       "projectName": "ClientO1",
-      "projectPath": "c:\\Users\\Kyubolas\\Documents\\Visual Studio 2017\\Projects\\ServerC1\\ClientO1\\ClientO1.csproj",
-      "outputPath": "c:\\Users\\Kyubolas\\Documents\\Visual Studio 2017\\Projects\\ServerC1\\ClientO1\\obj\\",
+      "projectPath": "C:\\Users\\Kyubolas\\Documents\\Visual Studio 2017\\Projects\\ServerC1\\ClientO1\\ClientO1.csproj",
+      "outputPath": "C:\\Users\\Kyubolas\\Documents\\Visual Studio 2017\\Projects\\ServerC1\\ClientO1\\obj\\",
       "projectStyle": "PackageReference",
       "originalTargetFrameworks": [
         "netcoreapp1.1"

