@@ -11,20 +11,20 @@ namespace ClientO1
 
             Console.WriteLine("Iniciando...");
 
-            Conn Sock = new Conn();
-
-            Sock.Config_Server();
+            //Conn Sock = new Conn();
+            Declas.Conection = new Conn();
+            Declas.Conection.Config_Server();
 
             Console.WriteLine("Press Enter from initialize server.");
             Console.ReadLine();
             Console.WriteLine("Init...");
 
-            Sock.Connect();
+            Declas.Conection.Connect();
 
             Console.WriteLine("Press Enter from Disconnect.");
             Console.ReadLine();
 
-            Sock.Disconnect();
+            Declas.Conection.Disconnect();
 
             Console.WriteLine("Close read.");
             Console.WriteLine("Press Enter from exit.");

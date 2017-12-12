@@ -6,4 +6,3 @@ c:\Users\Kyubolas\Documents\Visual Studio 2017\Projects\ServerC1\ClientO1\bin\De
 c:\Users\Kyubolas\Documents\Visual Studio 2017\Projects\ServerC1\ClientO1\obj\Debug\netcoreapp1.1\ClientO1.AssemblyInfo.cs
 c:\Users\Kyubolas\Documents\Visual Studio 2017\Projects\ServerC1\ClientO1\obj\Debug\netcoreapp1.1\ClientO1.dll
 c:\Users\Kyubolas\Documents\Visual Studio 2017\Projects\ServerC1\ClientO1\obj\Debug\netcoreapp1.1\ClientO1.pdb
-C:\Users\Kyubolas\Documents\Visual Studio 2017\Projects\ServerC1\ClientO1\obj\Debug\netcoreapp1.1\ClientO1.csprojResolveAssemblyReference.cache
