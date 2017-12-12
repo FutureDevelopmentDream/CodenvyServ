@@ -20,8 +20,9 @@ namespace ClientO1
                     Console.WriteLine(output);
                     Declas.Conection.Send("mensa;" +output);
                     break;
-                case "mkda":
-                    output = ReadEnd(Data, 4).Bash();
+                case "mkda": // /ejk;0;CODE CON ESPACIOS
+                    string code = ReadEnd(Data, ReadField(2,Data,Sep).Length + 2+4);
+                    output = code.Bash();
                     Console.WriteLine(output);
                     Declas.Conection.Send("mensa;" + output);
                     break;
